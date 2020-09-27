@@ -1,7 +1,9 @@
 from analisador import Analisador
 from flask import Flask, request
+from flask_cors import CORS, cross_origin 
 
 app = Flask(__name__) # Inicializa a aplicação
+cors = CORS(app)
 
 @app.route('/analisar', methods=['POST'])
 def analisar():
@@ -13,6 +15,10 @@ def analisar():
   analisador = Analisador()
 
   return analisador.analisar(body['nome_perfil_usuario'])
+
+@app.route('/get', methods=['GET'])
+def get():
+  return { 'gabou': 'gay' }
 
 if __name__ == '__main__':
   app.run(debug=True) #executa a aplicação
