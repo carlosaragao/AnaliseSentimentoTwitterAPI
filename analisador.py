@@ -3,6 +3,8 @@ import re # Biblioteca de Expressões Regulares
 import pandas as pd # Biblioteca de manipulação de dados
 from textblob import TextBlob as tb # Biblioteca de análise de sentimento
 import numpy as np # Biblioteca matemática
+from googletrans import Translator
+from unidecode import unidecode
 
 class Analisador():
   consumer_key = None
@@ -23,7 +25,7 @@ class Analisador():
     self.api = tweepy.API(auth)
 
   def analisar(self, nome_perfil_usuario):
-    list_tweets = self.obter_tweets(nome_perfil_usuario = nome_perfil_usuario, quantidade = 100)
+    list_tweets = self.obter_tweets(nome_perfil_usuario = nome_perfil_usuario)
 
     analysis = None
     numPos = 0
@@ -49,12 +51,13 @@ class Analisador():
 
     return { 'media_positiva': mediaPos, 'media_negativa': mediaNeg, 'media_neutra': mediaNeu }
 
-  def obter_tweets(self, nome_perfil_usuario, quantidade):
-    results = self.api.user_timeline(screen_name = nome_perfil_usuario, count = quantidade, tweet_mode = 'extended')
+  def obter_tweets(self, nome_perfil_usuario):
+    results = self.api.user_timeline(screen_name = nome_perfil_usuario, count = 100, tweet_mode = 'extended')
     tweets = []
 
     for r in results:
       tweet = re.sub(r'http\S+', '', r.full_text)
+      # tweets.append(Translator().translate(tweet.replace('\n', ' ')).text)
       tweets.append(tweet.replace('\n', ' '))
 
     return tweets
