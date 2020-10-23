@@ -2,7 +2,6 @@ import tweepy # Biblioteca de acesso à API do Twitter
 import re # Biblioteca de Expressões Regulares
 import pandas as pd # Biblioteca de manipulação de dados
 from textblob import TextBlob as tb # Biblioteca de análise de sentimento
-import numpy as np # Biblioteca matemática
 from googletrans import Translator
 from unidecode import unidecode
 

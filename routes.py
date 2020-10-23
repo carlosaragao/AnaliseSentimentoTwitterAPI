@@ -16,9 +16,5 @@ def analisar():
 
   return analisador.analisar(body['nome_perfil_usuario'])
 
-@app.route('/get', methods=['GET'])
-def get():
-  return { 'gabou': 'gay' }
-
 if __name__ == '__main__':
   app.run(debug=True) #executa a aplicação

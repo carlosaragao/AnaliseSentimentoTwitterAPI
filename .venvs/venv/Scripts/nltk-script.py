@@ -1,4 +1,4 @@
-#!c:\users\carlo\desktop\project\.venvs\venv\scripts\python.exe
+#!c:\users\carlo\desktop\projeto\analisesentimentotwitterapi\.venvs\venv\scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'nltk==3.5','console_scripts','nltk'
 __requires__ = 'nltk==3.5'
 import re

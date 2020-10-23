@@ -1,4 +1,4 @@
-#!c:\users\carlo\desktop\project\.venvs\venv\scripts\python.exe
+#!c:\users\carlo\desktop\projeto\analisesentimentotwitterapi\.venvs\venv\scripts\python.exe
 # -*- coding: utf-8 -*-
 import argparse
 import sys
